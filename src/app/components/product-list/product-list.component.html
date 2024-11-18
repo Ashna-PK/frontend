@@ -1,0 +1,45 @@
+<app-header></app-header>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let product of products">
+      <div class="card">
+        <!-- <img class="card-img-top" [src]="product.imageUrl" alt="Product image" /> -->
+        <div class="card-body">
+          <h5 class="card-title text-dark">Name: {{ product.name }}</h5>
+          <p class="card-text text-muted">Rating: {{ product.rating }} ★</p>
+          <p class="card-text">{{ product.description }}</p>
+          <p class="card-text"><strong>Price:</strong> {{ product.price }}</p>
+          <p class="card-text"><strong>Available Quantity:</strong> {{ product.quantity }}</p>
+        </div>
+        <div class="card-footer text-center">
+          <div class="quantity-control">
+            <!-- Decrease Button -->
+            <button
+              class="quantity-btn"
+              (click)="decreaseQuantity(product)"
+              [disabled]="!product.selectedQuantity || product.selectedQuantity <= 0"
+            >
+              -
+            </button>
+            <!-- Selected Quantity -->
+            <span class="quantity-value">{{ product.selectedQuantity || 0 }}</span>
+            <!-- Increase Button -->
+            <button
+              class="quantity-btn"
+              (click)="increaseQuantity(product)"
+              [disabled]="product.quantity <= 0"
+            >
+              +
+            </button>
+          </div>
+          <!-- Book Button -->
+          <!-- <button class="book-btn" [disabled]="!(product.selectedQuantity > 0)">Book</button> -->
+          <button class="book-btn" (click)="bookProduct(product)" [disabled]="!(product.selectedQuantity > 0)">
+            Book
+          </button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

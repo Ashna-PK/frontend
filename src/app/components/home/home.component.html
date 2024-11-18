@@ -1,0 +1,18 @@
+
+@if(Role=="user"){
+    <app-header></app-header>
+    <div class="body_home">
+        <app-nav-bar></app-nav-bar>
+        <div class="caro_body"><app-carousal></app-carousal></div>
+        <div class="footerdata"><app-footer></app-footer></div>
+        </div>
+    } 
+@else {
+<app-header></app-header>
+<div class="body_home">
+<app-nav-bar></app-nav-bar>
+<div class="caro_body"><app-carousal></app-carousal></div>
+<div class="footerdata"><app-footer></app-footer></div>
+</div>
+}
+<router-outlet />

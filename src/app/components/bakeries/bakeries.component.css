@@ -1,0 +1,167 @@
+.container {
+  background: linear-gradient(135deg, #aab6c7 0%, #979eac 100%);
+  margin-inline: 0;  
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
+/* Card styling */
+.card {
+  box-shadow: 0 4px 15px rgba(22, 8, 8, 0.781);
+  border-radius: 12px;
+  border: none;
+  background: rgb(218, 207, 177);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  position: relative;
+  max-width: 300px;  /* Added max-width */
+  margin: 0 auto;    /* Center card in column */
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(23, 195, 178, 0.2);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #17C3B2, #2DC4B6);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Image styling */
+.card-img-top {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  height: 160px;  /* Reduced height */
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+/* Card body styling */
+.card-body {
+  text-align: center;
+  padding: 1rem;  /* Reduced padding */
+}
+
+.card-title {
+  color: #2d3436;
+  font-weight: 600;
+  margin-bottom: 0.75rem;  /* Reduced margin */
+  position: relative;
+  display: inline-block;
+  font-size: 1.1rem;  /* Slightly smaller font */
+}
+
+.card-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #17C3B2;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-title::after {
+  transform: scaleX(1);
+}
+
+.card-text {
+  color: #252829;
+  line-height: 1.4;  /* Reduced line height */
+  margin-bottom: 0.4rem;  /* Reduced margin */
+  font-size: 0.9rem;  /* Slightly smaller font */
+}
+
+/* Rating stars styling */
+.card-text:nth-child(2) {
+  color: #fdcb6e;
+  font-weight: 600;
+}
+
+/* Card footer styling */
+.card-footer {
+  background: transparent;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1rem;  /* Reduced padding */
+}
+
+/* Button styling */
+button {
+  padding: 0.6em 1.4em;  /* Reduced padding */
+  border: 2px solid #edeaf0ad;
+  position: relative;
+  overflow: hidden;
+  /* background-color: transparent; */
+  background: linear-gradient(135deg, #aab6c7 0%, #979eac 100%);
+
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px;  /* Reduced font size */
+  transition: all 0.3s ease;
+  z-index: 1;
+  font-family: inherit;
+  color: #f1f1ed;
+  border-radius: 20px;  /* Slightly reduced border radius */
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+button::before {
+  content: '';
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #17C3B2;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+button:hover::before {
+  width: 105%;
+}
+
+button:hover {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(23, 195, 178, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 1.5rem;  /* Reduced margin */
+  }
+  
+  .container {
+    padding: 1rem;
+  }
+}
+
+/* Column size adjustment */
+.col-md-4 {
+  padding: 2.75rem;  /* Reduced padding */
+}

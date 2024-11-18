@@ -1,0 +1,68 @@
+<app-header></app-header>
+<div class="container">
+  <h2>Admin Home</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ShopId</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Address</th>
+        <th>Created At</th>
+        <th>Time</th>
+        <th>Rating</th>
+        <th>Actions</th>
+        <!-- The header for the actions column -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of records; let i = index" class="table-row">
+        <td>{{record.id}}</td>
+        <td>{{ record.name }}</td>
+        <td>{{ record.description }}</td>
+        <td>{{ record.address }}</td>
+        <td>{{ record.createdAt }}</td>
+        <td>
+          <div class="time-column">
+            <span class="time-item">{{
+              record.openTime 
+            }}</span>
+            -
+            <span class="time-item">{{
+              record.closeTime
+            }}</span>
+          </div>
+        </td>
+        <td>
+          <!-- Rating input field if not verified -->
+          <span *ngIf="record.isVerified">{{ record.rating }}</span>
+          <input
+            *ngIf="!record.isVerified"
+            type="number"
+            [(ngModel)]="record.rating"
+            min="1"
+            max="5"
+            (input)="validateRating(record)"
+          />
+        </td>
+
+        <td>
+          <!-- Actions column -->
+          <!-- Verify button -->
+          <button
+            class="btn btn-verify"
+            [disabled]="record.isVerified"
+            (click)="verifyRecord(record)"
+          >
+            Verify
+          </button>
+          <!-- Delete button -->
+          <button class="btn btn-delete" (click)="deleteRecord(record.id,record.name)">
+            Delete
+          </button>
+        </td>
+        <!-- End of Actions column -->
+      </tr>
+    </tbody>
+  </table>
+</div>

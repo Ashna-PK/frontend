@@ -1,0 +1,79 @@
+<nav class="categories-nav">
+    <div class="container">
+      <div class="categories-wrapper">
+        <!-- Food Dropdown -->
+        <div class="dropdown">
+          <button class="category-btn" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false">
+            <span>Food</span>
+            <i class="fas fa-chevron-down arrow-icon"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/bakeries" (click)="goToBakery()">Bakeries</a></li>
+            <li><a class="dropdown-item" routerLink="/hotels">Hotels</a></li>
+            <li><a class="dropdown-item" routerLink="/restaurants">Restaurants</a></li>
+          </ul>
+        </div>
+  
+        <!-- Book Dropdown -->
+        <div class="dropdown">
+          <button class="category-btn" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false">
+            <span>Book</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/bookstore">Bookstores</a></li>
+            <li><a class="dropdown-item" routerLink="/libraries">Libraries</a></li>
+          </ul>
+        </div>
+  
+        <!-- Groceries Dropdown -->
+        <div class="dropdown">
+          <button class="category-btn" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false">
+            <span>Groceries</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/supermarkets">Supermarkets</a></li>
+            <li><a class="dropdown-item" routerLink="/local-stores">Local Stores</a></li>
+            <li><a class="dropdown-item" routerLink="/organic-shops">Organic Shops</a></li>
+          </ul>
+        </div>
+  
+        <!-- Fashion Dropdown -->
+        <div class="dropdown">
+          <button class="category-btn" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false">
+            <span>Fashion</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/clothing">Clothing</a></li>
+            <li><a class="dropdown-item" routerLink="/accessories">Accessories</a></li>
+            <li><a class="dropdown-item" routerLink="/footwear">Footwear</a></li>
+          </ul>
+        </div>
+  
+        <!-- Beauty Products Dropdown -->
+        <div class="dropdown">
+          <button class="category-btn" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false">
+            <span>Beauty Products</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/cosmetics">Cosmetics</a></li>
+            <li><a class="dropdown-item" routerLink="/skincare">Skincare</a></li>
+            <li><a class="dropdown-item" routerLink="/haircare">Haircare</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>

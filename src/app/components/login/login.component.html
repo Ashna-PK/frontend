@@ -1,0 +1,79 @@
+
+<a href="https://front.codes/" class="logo" target="_blank">
+</a>
+
+<div class="section">
+	<div class="container">
+		<div class="row full-height justify-content-center">
+			<div class="col-12 text-center align-self-center ">
+				<div class="section pb-5 pt-5 pt-sm-2 text-center">
+					<h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+					  <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+					  <label for="reg-log"></label>
+					<div class="card-3d-wrap mx-auto">
+						<div class="card-3d-wrapper">
+							<div class="card-front">
+								<div class="center-wrap">
+									<div class="section text-center">
+										<h4 class="mb-4 pb-3">Log In</h4>
+										<div class="form-group">
+											<input type="email" [(ngModel)]="loginObj.email" name="logemail"  class="form-style" placeholder="Your Email" id="logemail1" autocomplete="off">
+											<i class="input-icon uil uil-at"></i>
+										</div>	
+										<div class="form-group mt-2">
+											<input type="password" [(ngModel)]="loginObj.password" name="logpass" class="form-style" placeholder="Your Password" id="logpass2" autocomplete="off">
+											<i class="input-icon uil uil-lock-alt"></i>
+										</div>
+										<button class="btn mt-4" (click)="onLogin()">submit</button>
+										<p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
+									  </div>
+								  </div>
+							  </div>
+							<div class="card-back">
+								<div class="center-wrap">
+									<div class="section text-center">
+										<h4 class="mb-4 pb-3">Sign Up</h4>
+										<div class="form-group">
+											<input type="text" [(ngModel)]="registerObj.name" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
+											<i class="input-icon uil uil-user"></i>
+										</div>	
+										<div class="form-group mt-2">
+											<input type="email" [(ngModel)]="registerObj.email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+											<i class="input-icon uil uil-at"></i>
+										</div>	
+										<div class="form-group mt-2">
+											<input type="tel" [(ngModel)]="registerObj.phone" class="form-style" name="phone" placeholder="Phone Number" id="logphone" pattern="[0-9]{10}" required autocomplete="off">
+										<i class="input-icon uil uil-at"></i>
+										</div>
+										<div class="form-group mt-2">
+											<input type="text" [(ngModel)]="userObj.address" name="logaddress" class="form-style" placeholder="Your Adress" id="logsdress" autocomplete="off">
+											<i class="input-icon uil uil-at"></i>
+										</div>
+										<div class="form-group mt-2">
+											<input type="password" [(ngModel)]="registerObj.password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+											<i class="input-icon uil uil-lock-alt"></i>
+										</div>
+										<div class="form-group mt-2">
+											<input type="password"  name="logpass" [(ngModel)]='confirmPass'class="form-style" placeholder="Confirm Password" id="logpass1" autocomplete="off">
+											<i class="input-icon uil uil-lock-alt"></i>
+										</div>
+										
+										<div class="form-group mt-4">
+											<input type="radio"  class="radioTog" id="option1" [(ngModel)]="isUser" name="group" value="1" required>
+												<label for="option1">You are here to buy</label>
+
+												<input type="radio" class="radioTog" [(ngModel)]="isSeller" id="option2" name="group" value="2" required>
+												<label for="option2">You are here to sell</label>
+  
+										  </div>
+										<button  class="btn mt-4" (click)="onRegister()">submit</button>
+									  </div>
+								  </div>
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+	</div>
+</div>

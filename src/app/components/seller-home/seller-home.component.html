@@ -1,0 +1,47 @@
+<app-header></app-header>
+<button class="btn-add" (click)="openAddModal()">+</button>
+<div class="card_container">
+<div class="product-card" *ngFor="let product of products; let i = index">
+  <div class="card-header">
+    <h3>{{ product.name }}</h3>
+    <p>Rating: {{ product.rating }} / 5</p>
+  </div>
+  <div class="card-body">
+    <p>{{ product.description }}</p>
+    <p><strong>Price:</strong> ${{ product.price }}</p>
+    <p><strong>Available Quantity:</strong> {{ product.quantity }}</p>
+  </div>
+
+  
+  <div class="card-footer">
+    <button (click)="openUpdateModal(i)" class="btn-update">Update</button>
+    <button (click)="deleteProduct(i)" class="btn-delete">Delete</button>
+  </div>
+</div>
+</div>
+
+<!-- Modal for Add/Update -->
+<div class="modal" *ngIf="selectedProduct">
+  <div class="modal-content">
+    <h2>{{ isAddMode ? 'Add New Product' : 'Update Product' }}</h2>
+    <form (ngSubmit)="saveProduct()">
+      <label>Name:</label>
+      <input [(ngModel)]="selectedProduct.name" name="name" required />
+      
+      <!-- <label>Rating:</label>
+      <input [(ngModel)]="selectedProduct.rating" name="rating" type="number" min="1" max="5" required /> -->
+      
+      <label>Description:</label>
+      <input [(ngModel)]="selectedProduct.description" name="description" required />
+      
+      <label>Price:</label>
+      <input [(ngModel)]="selectedProduct.price" name="price" type="number" required />
+      
+      <label>Quantity:</label>
+      <input [(ngModel)]="selectedProduct.quantity" name="quantity" type="number" required />
+        
+      <button type="submit" onclick="">{{ isAddMode ? 'Add Product' : 'Update Product' }}</button>
+      <button class="button_inside"type="button" (click)="closeModal()">Cancel</button>
+    </form>
+  </div>
+</div>

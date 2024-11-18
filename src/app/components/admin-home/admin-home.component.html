@@ -1,0 +1,63 @@
+<app-header></app-header>
+<div class="container mt-5">
+  <h2>Shop Registration</h2>
+  <form [formGroup]="shopForm" (ngSubmit)="onSubmit()">
+    <input
+      type="text"
+      [ngModel]=""
+      placeholder="Shop Name"
+      formControlName="shopName"
+      required
+    />
+
+    <textarea
+      placeholder="Shop Description (Mention any license)"
+      formControlName="shopDescription"
+      required
+    ></textarea>
+    <div class="category d-flex">
+      <label class="category" style="margin-right: 10">Category:</label>
+      <select class="dropdown" formControlName="category" required>
+        <option value="" disabled selected>Select a category</option>
+        <option value="food">Food</option>
+        <option value="books">Books</option>
+        <option value="groceries">Groceries</option>
+        <option value="fashion">Fashion</option>
+        <option value="beauty products">Beauty Products</option>
+      </select>
+    </div>
+    <div class="Time">
+      <label for="openingTime">Opening Time:</label>
+      <input
+        type="time"
+        id="openingTime"
+        formControlName="openingTime"
+        required
+      />
+    </div>
+    <div class="Time">
+      <label for="closingTime">Closing Time:</label>
+      <input
+        type="time"
+        id="closingTime"
+        formControlName="closingTime"
+        required
+      />
+    </div>
+
+    <textarea
+      placeholder="Shop Address"
+      formControlName="shopAddress"
+      required
+    ></textarea>
+
+    <input
+      type="tel"
+      placeholder="Phone Number"
+      formControlName="phoneNumber"
+      required
+    />
+
+    <button type="submit" (click)="goToSellerHome()">Register Shop</button>
+  </form>
+</div>

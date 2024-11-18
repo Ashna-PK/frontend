@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div class="table-container">
+    <h2> User Details</h2>
+    <pre *ngIf="!users.length">No data available</pre>
+    <table class="custom-table" *ngIf="users.length > 0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users; let i = index" [class.row-hover]="hoveredRow === i" (mouseenter)="hoveredRow = i" (mouseleave)="hoveredRow = -1">
+          <td>{{ user.name }}</td>
+          <td>{{ user.address }}</td>
+          <td>{{ user.phoneNo }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <button class="delete-btn" (click)="DeleteUser(user.id,user.name)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

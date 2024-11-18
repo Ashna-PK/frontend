@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div class="container mt-5">
+  <div class="row">
+    <!-- Iterate over products with *ngFor in Angular, but here you manually define each product for now -->
+    @for (shop of bakeries; track $index) {
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <!-- <img class="card-img-top" [src]="shop.imageUrl" alt="Product image" /> -->
+
+        <div class="card-body">
+          <h5 class="card-title text-dark">Name:{{ shop.name }}</h5>
+
+          <p class="card-text text-muted">Rating: {{ shop.rating }} ★</p>
+
+          <p class="card-text">{{ shop.description }}</p>
+
+          <p class="card-text">{{ shop.isOpen }}</p>
+
+          <p class="card-text">{{ shop.openTime }}</p>
+          <p class="card-text">{{ shop.closeTime }}</p>
+        </div>
+
+        <div class="card-footer text-center">
+          <!-- You can replace this with your button or any action -->
+
+          <button (click)="goToProducts(shop.id)">Explore</button>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>

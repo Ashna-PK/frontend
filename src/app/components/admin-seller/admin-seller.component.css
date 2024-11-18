@@ -1,0 +1,255 @@
+/* Remove table borders */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  /* Row Hover Effect */
+  .table-row {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .table-row:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Time column styling */
+  .time-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  .time-item {
+    color: #333;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .time-column:hover .time-item {
+    color: #007bff;
+  }
+  
+  /* Buttons styling */
+  .btn {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  
+  .btn-verify {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .btn-verify:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+  }
+  
+  .btn-delete {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .btn-delete:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+  }
+  
+  .btn:focus {
+    outline: none;
+  }
+  
+  /* Modal Styling */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+  }
+  
+  .modal.show {
+    display: flex;
+    opacity: 1;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: modal-anim 0.3s ease;
+  }
+  
+  @keyframes modal-anim {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  label {
+    margin: 10px 0;
+    display: block;
+  }
+  
+  input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .btn-verified {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .btn-verified:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+  }
+  
+  .btn-cancel {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .btn-cancel:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+  }
+  
+  .btn:focus {
+    outline: none;
+  }
+  
+  thead th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  td {
+    padding: 12px;
+    text-align: center;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Profile picture */
+  .profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  /* Custom dropdown menu styling */
+  .custom-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 60px; /* Adjust based on your header height */
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    min-width: 200px;
+    z-index: 1000;
+  }
+  
+  /* Show the dropdown when .show class is applied */
+  .custom-dropdown.show {
+    display: block;
+  }
+  
+  /* Dropdown items */
+  .custom-dropdown .dropdown-item {
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+  }
+  
+  .custom-dropdown .dropdown-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .custom-dropdown .user-info {
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  .custom-dropdown .profile-picture-small {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  .user_data{
+
+    margin-right: 30px;
+    color: #f0f0f0;
+    cursor: pointer;
+  }
+  

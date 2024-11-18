@@ -1,0 +1,66 @@
+<app-header></app-header>
+<div class="mt-5">
+    <table class="table">
+      <thead>
+        <tr>
+          <th *ngIf="role === 'user'">ShopId</th>
+          <th *ngIf="role === 'seller'">UserId</th>
+          <th>Product Name</th>
+          <th>Ordered Quantity</th>
+          <th>Ordered Date</th>
+          <th>Total Price</th>
+          <th *ngIf="role === 'seller'">Stars</th>
+          <th *ngIf="role === 'user'">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td *ngIf="role === 'user'">{{ order.vendorId }}</td>
+          <td *ngIf="role === 'seller'">{{ order.username }}</td>
+          <td>{{ order.productName }}</td>
+          <td>{{ order.quantity }}</td>
+          <td>{{order.orderDate.split('T')[0]}}</td>
+          <td>{{ order.totalAmount | currency }}</td>
+          <td *ngIf="role === 'seller'">{{ order.stars }}</td>
+          <td *ngIf="role === 'user'">
+            <button 
+              (click)="openReviewModal(order)" 
+              class="btn review-btn">
+              Give Review
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Modal Template -->
+   <div class="modal" *ngIf="showReviewModal">
+  <div class="modal-header">
+    <h5 class="modal-title">Review Product</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeReviewModal()"></button>
+  </div>
+  <div class="modal-body">
+    <textarea [(ngModel)]="reviewText" rows="4" class="form-control" placeholder="Write your review here..."></textarea>
+    <div class="rating-section">
+      <p>Select Rating:</p>
+      <div class="rating-options">
+        <label *ngFor="let star of [1, 2, 3, 4, 5]" class="rating-label">
+          <input
+            type="radio"
+            name="rating"
+            [value]="star"
+            [(ngModel)]="rating"
+          />
+          {{ star }}
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="closeReviewModal()">Close</button>
+    <button type="button" class="btn btn-primary" (click)="submitReview()">Submit</button>
+  </div>
+</div>
+
+  </div>
+  
